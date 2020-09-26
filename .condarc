@@ -1,0 +1,7 @@
+env_prompt: ({name})
+channels:
+  - defaults
+  - conda-forge
+auto_activate_base: false
+envs_dirs: 
+  - ~/.conda/envs
