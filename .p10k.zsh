@@ -342,14 +342,14 @@
 
   #####################################[ vcs: git status ]######################################
   # Version control system colors.
-  # typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2
-  # typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=3
-  # typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=2
-  # typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=3
-  # typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
+   typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2
+   typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=127
+   typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=89
+   typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=52
+   typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
 
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
-  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
+  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON="\uF126"
 
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
@@ -378,7 +378,7 @@
     local      clean='%0F' # black foreground
     local   modified='%0F' # black foreground
     local  untracked='%0F' # black foreground
-    local conflicted='%1F' # red foreground
+    local conflicted='%7F' # red foreground
 
     local res
     local where  # branch or tag
@@ -516,7 +516,7 @@
   ###################[ command_execution_time: duration of the last command ]###################
   # Execution time color.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=0
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=neon
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=70
   # Show duration of the last command if takes at least this many seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
   # Show this many fractional digits. Zero means round to seconds.
@@ -880,8 +880,8 @@
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=3
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=0
   # Default context color (no privileges, no SSH).
-  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=3
-  typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=0
+  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=0
+  typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=202
 
   # Context format when running with privileges: user@hostname.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%n@%m'
@@ -915,8 +915,8 @@
 
   #####################[ anaconda: conda environment (https://conda.io/) ]######################
   # Anaconda environment color.
-  # typeset -g POWERLEVEL9K_ANACONDA_FOREGROUND=0
-  # typeset -g POWERLEVEL9K_ANACONDA_BACKGROUND=4
+  typeset -g POWERLEVEL9K_ANACONDA_FOREGROUND=0
+  typeset -g POWERLEVEL9K_ANACONDA_BACKGROUND=214
 
   # Anaconda segment format. The following parameters are available within the expansion.
   #
@@ -1585,8 +1585,8 @@
 
   ####################################[ time: current time ]####################################
   # Current time color.
-   typeset -g POWERLEVEL9K_TIME_FOREGROUND="black"
-   typeset -g POWERLEVEL9K_TIME_BACKGROUND="red"
+   typeset -g POWERLEVEL9K_TIME_FOREGROUND=0
+   typeset -g POWERLEVEL9K_TIME_BACKGROUND=45
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%I:%M:%S %p}'
   # If set to true, time will update when you hit enter. This way prompts for the past
