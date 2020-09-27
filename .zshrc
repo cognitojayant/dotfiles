@@ -6,8 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
  
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
  
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -24,13 +24,19 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
-export WORKON_HOME="~/.virtualenvs"
-VIRTUALENVWRAPPER_PYTHON=python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
- 
+if [[ "$OSTYPE" == "darwin"* ]];then    
+    export WORKON_HOME="~/.virtualenvs"
+    VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+    source /usr/local/bin/virtualenvwrapper.sh
+    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+elif [[ "$OSTYPE" == "linux-gnu"* ]];then
+    export WORKON_HOME="~/.virtualenvs"
+    VIRTUALENVWRAPPEER_PYTHON=/usr/bin/python3
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+    source /usr/local/bin/virtualenvwrapper.sh
+    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
