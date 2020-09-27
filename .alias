@@ -40,4 +40,8 @@ alias lrt='ls -1Fcrt'
 # List with modification time 
 alias lt='ls -ltFh'
 alias which-command=whenc
-alias clr="clear"
+
+
+
+# Open yml, txt, python using vim
+alias -s {yml,yaml,txt,py,json,sh,zsh}=vim
