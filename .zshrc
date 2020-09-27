@@ -26,7 +26,8 @@ unset __conda_setup
 
 
 export WORKON_HOME="~/.virtualenvs"
-VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+VIRTUALENVWRAPPER_PYTHON=python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
  
