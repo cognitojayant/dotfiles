@@ -38,7 +38,7 @@ if [[ "$OSTYPE" == "darwin"* ]];then
     export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 elif [[ "$OSTYPE" == "linux-gnu"* ]];then
     export WORKON_HOME="~/.virtualenvs"
-    VIRTUALENVWRAPPEER_PYTHON=/usr/bin/python3
+    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
     source /usr/local/bin/virtualenvwrapper.sh
     export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
