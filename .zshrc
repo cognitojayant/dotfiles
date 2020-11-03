@@ -50,7 +50,7 @@ source $HOME/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.dotfiles/.alias
 
 # Command suggestions based on history
-source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
 
 # Basic auto/tab complete:
 autoload -U compinit
