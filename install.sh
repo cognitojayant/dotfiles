@@ -5,6 +5,16 @@ ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
 ln -s $HOME/.dotfiles/.p10k.zsh $HOME/.p10k.zsh
 
 
+if [[ "$OSTYPE" == "darwin"* ]];then
+    pip install virtualenv virtualenvwrapper
+elif [[ "$OSTYPE" == "linux-gnu"* ]];then
+    sudo apt install -y python3
+    sudo apt install -y python3-pip
+    sudo pip3 install virtualenv virtualenvwrapper
+fi
+
+
+
 if [ -f $HOME/.zsh ];then
     echo "Directory already there"
 elif
