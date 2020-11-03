@@ -9,7 +9,11 @@ fi
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 
-
+# Appending History
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
