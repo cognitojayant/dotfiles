@@ -16,7 +16,7 @@ fi
 
 
 if [ -f $HOME/.zsh ];then
-    echo "Directory already there"
+    echo ".zsh Directory already there"
 elif
     mkdir -p $HOME/.zsh/plugins $HOME/.zsh/themes
     git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/plugins/zsh-autosuggestions
@@ -26,7 +26,7 @@ fi
 
 
 if [-f $HOME/.vim ];then
-    echo "Directory already there"
+    echo ".vim Directory already there"
 elif
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
