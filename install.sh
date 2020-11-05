@@ -17,7 +17,7 @@ fi
 
 if [ -f $HOME/.zsh ];then
     echo ".zsh Directory already there"
-elif
+else
     mkdir -p $HOME/.zsh/plugins $HOME/.zsh/themes
     git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh/zsh-syntax-highlighting
@@ -27,7 +27,7 @@ fi
 
 if [-f $HOME/.vim ];then
     echo ".vim Directory already there"
-elif
+else
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
@@ -35,7 +35,7 @@ fi
 
 if [ -f $HOME/.pyenv ];then
     echo "Pyenv Directory already present"
-elif
+else
     curl https://pyenv.run | zsh
     exec $SHELL
     git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
