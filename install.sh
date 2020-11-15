@@ -1,5 +1,7 @@
 #! /bin/bash
 
+chsh -s /bin/zsh
+
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
 ln -s $HOME/.dotfiles/.p10k.zsh $HOME/.p10k.zsh
@@ -20,7 +22,7 @@ if [ -f $HOME/.zsh ];then
 else
     mkdir -p $HOME/.zsh/plugins $HOME/.zsh/themes
     git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh/plugins/zsh-syntax-highlighting
     git clone https://github.com/romkatv/powerlevel10k.git $HOME/.zsh/themes/powerlevel10k
 fi
 
