@@ -1,6 +1,14 @@
 #! /bin/bash
 
-chsh -s /bin/zsh
+if [[ "$OSTYPE" == "linux-gnu"* ]];then
+    echo "Installing ZSH and Changing it to zsh"
+    sudo apt install -y zsh
+    chsh -s /bin/zsh
+elif [[ "$OSTYPE" == "darwin"* ]];then
+    echo "changing it to zsh in MacOS"
+    chsh -s /bin/zsh
+fi
+
 
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
@@ -8,8 +16,10 @@ ln -s $HOME/.dotfiles/.p10k.zsh $HOME/.p10k.zsh
 
 
 if [[ "$OSTYPE" == "darwin"* ]];then
+    echo "Installing virtualenv and virtualenvwrapper in MacOS"
     pip install virtualenv virtualenvwrapper
 elif [[ "$OSTYPE" == "linux-gnu"* ]];then
+    echo "Installing pip, virtualenv and virtualenvwrapper at system level"
     sudo apt install -y python3
     sudo apt install -y python3-pip
     sudo pip3 install virtualenv virtualenvwrapper
@@ -20,6 +30,7 @@ fi
 if [ -f $HOME/.zsh ];then
     echo ".zsh Directory already there"
 else
+    echo "Installing plugin in ZSH"
     mkdir -p $HOME/.zsh/plugins $HOME/.zsh/themes
     git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh/plugins/zsh-syntax-highlighting
@@ -30,6 +41,8 @@ fi
 if [-f $HOME/.vim ];then
     echo ".vim Directory already there"
 else
+    echo "Installing curl, vim plugin"
+    sudo apt install -y curl
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
@@ -38,6 +51,7 @@ fi
 if [ -f $HOME/.pyenv ];then
     echo "Pyenv Directory already present"
 else
+    echo "Installing pyenv"
     curl https://pyenv.run | zsh
     exec $SHELL
     git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
