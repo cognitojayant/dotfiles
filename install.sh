@@ -1,5 +1,12 @@
 #! /bin/bash
 
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+unzip Meslo.zip -d ~/.fonts
+fc-cache -fv
+echo "font install done"
+
+
 if [[ "$OSTYPE" == "linux-gnu"* ]];then
     echo "Installing ZSH and Changing it to zsh"
     sudo apt install -y zsh
@@ -51,7 +58,8 @@ fi
 if [ -f $HOME/.pyenv ];then
     echo "Pyenv Directory already present"
 else
-    echo "Installing pyenv"
+    echo "Installing build dependencies and pyenv"
+    sudo apt update; sudo apt install -y --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
     curl https://pyenv.run | zsh
     exec $SHELL
     git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
