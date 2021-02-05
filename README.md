@@ -12,6 +12,6 @@ git clone https://github.com/cognitojayant/dotfiles.git ~/.dotfiles
 ```
 sh install.sh
 ```
-#### Step-3\
-Go to edit then preferences in terminal, then check custom font and select meslo font"
+#### Step-3
+Go to edit then preferences in terminal, then check custom font and select meslo font
 ![Go to edit > preferences in terminal select font Meslo](terminal.png)
