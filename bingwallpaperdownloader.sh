@@ -57,7 +57,7 @@ do
 
   # Fetching API response.
   apiResp=$(curl -s $reqImg)
-  if [ $? -gt 0 ]; then
+  if [[ $? -gt 0 ]];then
     echo "Ping failed!"
     exit 1
   fi
