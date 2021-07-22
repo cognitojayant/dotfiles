@@ -1,7 +1,7 @@
 #! /bin/bash
 
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+curl -# -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
 unzip Meslo.zip -d ~/.fonts
 fc-cache -fv
 echo "font install done"
@@ -45,7 +45,7 @@ else
 fi
 
 
-if [-f $HOME/.vim ];then
+if [[-f $HOME/.vim ]];then
     echo ".vim Directory already there"
 else
     echo "Installing curl, vim plugin"
@@ -55,7 +55,7 @@ else
 fi
 
 
-if [ -f $HOME/.pyenv ];then
+if [[ -f $HOME/.pyenv ]];then
     echo "Pyenv Directory already present"
 else
     echo "Installing build dependencies and pyenv"
