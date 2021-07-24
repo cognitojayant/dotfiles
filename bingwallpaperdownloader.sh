@@ -94,15 +94,15 @@ do
   # Writing copyright.
   echo "$copyright" > $path${imgName/%.jpg/.txt}
   
-  if  [[ "$XDG_CURRENT_DESKTOP" = "XFCE" ]];then
+  if [[ "$XDG_CURRENT_DESKTOP" == "XFCE" ]];then
       xres=($(echo $(xfconf-query --channel xfce4-desktop --list | grep last-image)))
       for x in "${xres[@]}"
       do    
          xfconf-query --channel xfce4-desktop --property $x --set $path$imgName
      done
-  elif [[ "$XDG_CURRENT_DESKTOP" = "i3" ]];then
+  elif [[ "$XDG_CURRENT_DESKTOP" == "i3" ]];then
     feh --bg-scale $path$imgName
-  elif [[ "$XDG_CURRENT_DESKTOP" = "MATE" ]];then
+  elif [[ "$XDG_CURRENT_DESKTOP" == "MATE" ]];then
       gsettings set org.mate.background picture-filename $path$imgName
   # Set the wallpaper for unity, gnome3, cinnamon.
   elif gsettings set org.gnome.desktop.background picture-uri "file://$path$imgName";then

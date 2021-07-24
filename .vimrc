@@ -11,7 +11,7 @@ inoremap jk <Esc>
 "=====================================================
 "" General settings
 "=====================================================
-
+set filetype=xml
 filetype on
 filetype plugin on
 filetype plugin indent on
