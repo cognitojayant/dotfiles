@@ -4,6 +4,8 @@
 git clone https://github.com/powerline/fonts.git ~/.fonts && cd ~/.fonts &&  sh install.sh
 rm -r ~/.fonts 
 
+
+
 if [[ "$OSTYPE" == "linux-gnu"* ]];then
     echo "Installing ZSH and Changing it to zsh"
     sudo apt install -y zsh
@@ -42,7 +44,7 @@ else
 fi
 
 
-if [-f $HOME/.vim ];then
+if [[-f $HOME/.vim ]];then
     echo ".vim Directory already there"
 else
     echo "Installing curl, vim plugin"
@@ -52,7 +54,7 @@ else
 fi
 
 
-if [ -f $HOME/.pyenv ];then
+if [[ -f $HOME/.pyenv ]];then
     echo "Pyenv Directory already present"
 else
     echo "Installing build dependencies and pyenv"
