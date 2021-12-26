@@ -5,9 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
- 
+
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 
 # Appending History
 HISTFILE=~/.histfile
@@ -31,6 +31,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 if [[ "$OSTYPE" == "darwin"* ]];then    
+    export PATH="/usr/local/opt/python/libexec/bin:$PATH"
     export WORKON_HOME="~/.virtualenvs"
     VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv

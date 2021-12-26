@@ -1,11 +1,8 @@
 #! /bin/bash
 
-
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
-unzip Meslo.zip -d ~/.fonts
-fc-cache -fv
-echo "font install done"
-
+# Installing Powerline Meslo Nerd fonts, MacOS font Directory $HOME/Library/Fonts, Linux $HOME/.local/share/fonts
+git clone https://github.com/powerline/fonts.git ~/.fonts && cd ~/.fonts &&  sh install.sh
+rm -r ~/.fonts 
 
 if [[ "$OSTYPE" == "linux-gnu"* ]];then
     echo "Installing ZSH and Changing it to zsh"

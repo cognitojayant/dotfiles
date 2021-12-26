@@ -45,3 +45,6 @@ alias which-command=whenc
 
 # Open yml, txt, python using vim
 alias -s {yml,yaml,txt,py,json,sh,zsh}=vim
+
+# Python alias
+alias python=python3
