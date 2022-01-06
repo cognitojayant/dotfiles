@@ -63,3 +63,12 @@ else
     exec $SHELL
     git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
 fi
+
+if [[ -f $HOME/.sdkman ]];then
+    echo "sdkman already installed"
+else
+    echo "installing sdkman"
+    curl -s "https://get.sdkman.io" | zsh
+fi
+
+
