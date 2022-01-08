@@ -82,3 +82,6 @@ source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [[ "$OSTYPE" == "darwin"* ]];then
         export PATH=$PATH:/usr/local/Cellar/openvpn/2.5.3/sbin
 fi
+
+# Adding KubeFlow Path
+export PATH=$PATH:~/bin
