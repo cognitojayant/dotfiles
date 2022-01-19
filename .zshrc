@@ -31,7 +31,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 if [[ "$OSTYPE" == "darwin"* ]];then    
-    export PATH="/usr/local/opt/python/libexec/bin:$PATH"
     export WORKON_HOME="~/.virtualenvs"
     VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv

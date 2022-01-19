@@ -4,7 +4,11 @@
 git clone https://github.com/powerline/fonts.git ~/.fonts && cd ~/.fonts &&  sh install.sh
 rm -r ~/.fonts 
 
-
+if [[ "$OSTYPE" == "darwin"* ]];then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"i
+    brew install python3
+else
+    echo "This is not Darwin based OS"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]];then
     echo "Installing ZSH and Changing it to zsh"
@@ -46,7 +50,7 @@ fi
 
 if [[-f $HOME/.vim ]];then
     echo ".vim Directory already there"
-else
+elif [[ "$OSTYPE" == "linux-gnu"* ]];then
     echo "Installing curl, vim plugin"
     sudo apt install -y curl
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -54,9 +58,11 @@ else
 fi
 
 
-if [[ -f $HOME/.pyenv ]];then
-    echo "Pyenv Directory already present"
-else
+if [[ "$OSTYPE" == "darwin"* ]] && ! [[ -f $HOME/.pyenv ]];then
+    curl https://pyenv.run | zsh
+    exec $SHELL
+    git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
+elif [[ "$OSTYPE" == "linux-gnu"* ]] && ! [[ -f $HOME/.pyenv ]];then
     echo "Installing build dependencies and pyenv"
     sudo apt update; sudo apt install -y --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
     curl https://pyenv.run | zsh
