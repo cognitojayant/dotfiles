@@ -86,3 +86,6 @@ fi
 
 # Adding KubeFlow Path
 export PATH=$PATH:~/bin
+
+## Adding Datapath for working with multiple data science projects
+export data_dir=~/data
