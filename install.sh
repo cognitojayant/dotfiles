@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -ex
 
 # Installing Powerline Meslo Nerd fonts, MacOS font Directory $HOME/Library/Fonts, Linux $HOME/.local/share/fonts
 git clone https://github.com/powerline/fonts.git ~/.fonts && cd ~/.fonts &&  sh install.sh
@@ -59,6 +59,7 @@ fi
 
 
 if [[ "$OSTYPE" == "darwin"* ]] && ! [[ -f $HOME/.pyenv ]];then
+    brew install openssl readline sqlite3 xz zlib
     curl https://pyenv.run | zsh
     exec $SHELL
     git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
