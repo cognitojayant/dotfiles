@@ -59,6 +59,7 @@ fi
 
 
 if [[ "$OSTYPE" == "darwin"* ]] && ! [[ -f $HOME/.pyenv ]];then
+    echo "Installing build dependencies"
     brew install openssl readline sqlite3 xz zlib
     curl https://pyenv.run | zsh
     exec $SHELL
