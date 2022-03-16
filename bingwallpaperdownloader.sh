@@ -1,5 +1,8 @@
-#!/bin/bash
+#!/bin/bash 
 # author: cognitojayant(cognitojayant@gmail.com)
+set -x 
+set -e
+set -v
 
 # Base URL.
 bing="http://www.bing.com"

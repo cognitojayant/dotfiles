@@ -1,30 +1,42 @@
-#! /bin/bash -ex
+#! /bin/bash 
 
-# Installing Powerline Meslo Nerd fonts, MacOS font Directory $HOME/Library/Fonts, Linux $HOME/.local/share/fonts
+set -x
+set -v
+set -e
+
+
+# Installing fonts, MacOS font Directory $HOME/Library/Fonts, Linux $HOME/.local/share/fonts
 git clone https://github.com/powerline/fonts.git ~/.fonts && cd ~/.fonts &&  sh install.sh
-rm -r ~/.fonts 
+rm -rf ~/.fonts 
 
+
+
+
+# Installing python3 in Mac OS using homebrew
 if [[ "$OSTYPE" == "darwin"* ]];then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"i
     brew install python3
 else
     echo "This is not Darwin based OS"
-
-if [[ "$OSTYPE" == "linux-gnu"* ]];then
-    echo "Installing ZSH and Changing it to zsh"
-    sudo apt install -y zsh
-    chsh -s /bin/zsh
-elif [[ "$OSTYPE" == "darwin"* ]];then
-    echo "changing it to zsh in MacOS"
-    chsh -s /bin/zsh
 fi
 
+change_shell() {
+if [[ "$OSTYPE" == "linux-gnu"* ]];then
+    echo "Installing ZSH and Changing it to zsh"
+    ### After installing and changing to zsh shell need to restart system
+    sudo apt install -y zsh
+    chsh -s /bin/zsh
+    echo "Please restart your computer after the installation script"
+elif [[ "$OSTYPE" == "darwin"* ]];then
+    echo "changing it to zsh in MacOS"
+    ### After installing and changing to zsh shell need to restart system
+    sudo apt install -y zsh
+    chsh -s /bin/zsh
+    echo "Please restart your computer after the installation script"
+fi
+}
 
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
-ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
-ln -s $HOME/.dotfiles/.p10k.zsh $HOME/.p10k.zsh
-
-
+set_python() {
 if [[ "$OSTYPE" == "darwin"* ]];then
     echo "Installing virtualenv and virtualenvwrapper in MacOS"
     pip install virtualenv virtualenvwrapper
@@ -34,10 +46,11 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]];then
     sudo apt install -y python3-pip
     sudo pip3 install virtualenv virtualenvwrapper
 fi
+}
 
 
-
-if [ -f $HOME/.zsh ];then
+zsh_plugin() {
+if [[ -f $HOME/.zsh ]];then
     echo ".zsh Directory already there"
 else
     echo "Installing plugin in ZSH"
@@ -46,8 +59,9 @@ else
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh/plugins/zsh-syntax-highlighting
     git clone https://github.com/romkatv/powerlevel10k.git $HOME/.zsh/themes/powerlevel10k
 fi
+}
 
-
+vim_pluging() {
 if [[-f $HOME/.vim ]];then
     echo ".vim Directory already there"
 elif [[ "$OSTYPE" == "linux-gnu"* ]];then
@@ -56,8 +70,9 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]];then
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
+}
 
-
+pyenv_install() {
 if [[ "$OSTYPE" == "darwin"* ]] && ! [[ -f $HOME/.pyenv ]];then
     echo "Installing build dependencies"
     brew install openssl readline sqlite3 xz zlib
@@ -71,12 +86,20 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]] && ! [[ -f $HOME/.pyenv ]];then
     exec $SHELL
     git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
 fi
+}
 
+sdkman_install() {
 if [[ -f $HOME/.sdkman ]];then
     echo "sdkman already installed"
 else
     echo "installing sdkman"
     curl -s "https://get.sdkman.io" | zsh
 fi
+}
 
+
+
+ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
+ln -s $HOME/.dotfiles/.p10k.zsh $HOME/.p10k.zsh
 
