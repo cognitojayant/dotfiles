@@ -98,6 +98,11 @@ fi
 }
 
 
+change_shell
+vim_plugging
+pyenv_install
+sdkman_install
+
 
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
