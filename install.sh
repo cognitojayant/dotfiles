@@ -99,7 +99,7 @@ fi
 
 
 change_shell
-vim_plugging
+vim_pluging
 pyenv_install
 sdkman_install
 
