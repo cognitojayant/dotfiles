@@ -9,6 +9,13 @@ inoremap jk <Esc>
 
 
 "=====================================================
+"" Autocmd
+"=====================================================
+au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+
+
+
+"=====================================================
 "" General settings
 "=====================================================
 set filetype=xml
@@ -16,8 +23,21 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 syntax enable
+set backspace=indent,eol,start
+set history=1000
+set showcmd
+set showmode
+set autoread
+set hidden
+" User Interface Options
+set laststatus=2
+set ruler
+set wildmenu
+set tabpagemax=40
+set mouse=a
 set t_Co=256
 set number
+set spell
 set ruler
 set ttyfast
 set tabstop=4
@@ -31,14 +51,14 @@ set enc=utf-8
 set nobackup
 set nowritebackup
 set noswapfile
-set backspace=indent,eol,start
 set scrolloff=10
 set clipboard=unnamed
 set exrc
 set secure
 set noerrorbells
 set magic
-
+set confirm  "display a confirmation dialog when closing an unsaved files
+syntax on "enable syntax highlighting
 
 
 call plug#begin('~/.vim/plugged')
