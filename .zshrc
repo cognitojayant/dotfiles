@@ -20,14 +20,14 @@ setopt appendhistory
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/cognitojayant/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/cognitojayant/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/cognitojayant/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME/miniconda3/bin:$PATH"
+        export PATH="/home/cognitojayant/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -49,6 +49,22 @@ unset __conda_setup
 ##THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+#if [[ "$OSTYPE" == "darwin"* ]];then    
+#    export WORKON_HOME="~/.virtualenvs"
+#    VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+#    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+#    source /usr/local/bin/virtualenvwrapper.sh
+#    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+#elif [[ "$OSTYPE" == "linux-gnu"* ]];then
+#    export WORKON_HOME="~/.virtualenvs"
+#    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+#    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+#    source /usr/local/bin/virtualenvwrapper.sh
+#    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+#fi
+>>>>>>> aaf3f61bdd4cc08c8f0dfc08893f17edb7a3983a
 
 source $HOME/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -90,3 +106,10 @@ export PATH=$PATH:~/bin
 
 ## Adding Datapath for working with multiple data science projects
 export data_dir=~/data
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+

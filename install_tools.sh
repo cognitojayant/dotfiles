@@ -20,6 +20,8 @@ install_tools() {
         sudo snap install notion-snap
         echo "installing sublime text"
         sudo snap install sublime-text --classic
+        echo "Installing rclone"
+        curl https://rclone.org/install.sh | sudo bash
     fi
 }
 

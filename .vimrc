@@ -124,6 +124,13 @@ let g:tagbar_autofocus=0
 let g:tagbar_width=42
 autocmd BufEnter *.py :call tagbar#autoopen(0)
 
+"=====================================================
+" Netrw settings
+"=====================================================
+let g:netrw_browse_split=4
+let g:netrw_winsize=20
+let g:netrw_liststyle=1
+
 
 "=====================================================
 "" NERDTree settings
