@@ -64,7 +64,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 #    source /usr/local/bin/virtualenvwrapper.sh
 #    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 #fi
->>>>>>> aaf3f61bdd4cc08c8f0dfc08893f17edb7a3983a
 
 source $HOME/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -111,5 +110,7 @@ export data_dir=~/data
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export BUCKET_NAME=marianmt-testing
 
 
