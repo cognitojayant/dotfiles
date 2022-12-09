@@ -11,7 +11,7 @@ inoremap jk <Esc>
 "=====================================================
 "" Autocmd
 "=====================================================
-au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+"au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 
 
 
