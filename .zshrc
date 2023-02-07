@@ -6,11 +6,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init --path)"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Appending History
 HISTFILE=~/.histfile
@@ -33,20 +33,20 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-#if [[ "$OSTYPE" == "darwin"* ]];then    
-#    export WORKON_HOME="~/.virtualenvs"
-#    VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-#    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-#    source /usr/local/bin/virtualenvwrapper.sh
-#    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-#elif [[ "$OSTYPE" == "linux-gnu"* ]];then
-#    export WORKON_HOME="~/.virtualenvs"
-#    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-#    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-#    source /usr/local/bin/virtualenvwrapper.sh
-#    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-#fi
-##THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+if [[ "$OSTYPE" == "darwin"* ]];then    
+    export WORKON_HOME="~/.virtualenvs"
+    VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+    source /usr/local/bin/virtualenvwrapper.sh
+    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+elif [[ "$OSTYPE" == "linux-gnu"* ]];then
+    export WORKON_HOME="~/.virtualenvs"
+    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+    source /usr/local/bin/virtualenvwrapper.sh
+    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+fi
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
