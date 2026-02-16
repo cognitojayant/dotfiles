@@ -14,7 +14,7 @@ rm -rf ~/.fonts
 
 # Installing python3 in Mac OS using homebrew
 if [[ "$OSTYPE" == "darwin"* ]];then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"i
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew install python3
 else
     echo "This is not Darwin based OS"
