@@ -57,3 +57,12 @@ export data_dir=~/data
 
 
 . "$HOME/.local/bin/env"
+
+# Added by Antigravity
+export PATH="/Users/cogitojayant/.antigravity/antigravity/bin:$PATH"
+
+# Auto-start tmux: attach to existing session or create new one
+# Skips if: already inside tmux, not interactive shell, tmux not installed
+if command -v tmux &>/dev/null && [[ -z "$TMUX" ]] && [[ $- == *i* ]]; then
+    tmux attach-session 2>/dev/null || tmux new-session
+fi

@@ -92,3 +92,4 @@ install_uv
 safe_ln "$HOME/.dotfiles/mac/.zshrc" "$HOME/.zshrc"
 safe_ln "$HOME/.dotfiles/mac/.vimrc" "$HOME/.vimrc"
 safe_ln "$HOME/.dotfiles/.p10k.zsh" "$HOME/.p10k.zsh"
+safe_ln "$HOME/.dotfiles/mac/.tmux.conf" "$HOME/.tmux.conf"
